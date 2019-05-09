@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hu/rabbit/base/IPAddress.cpp
+IPAddress.h
+/home/hu/rabbit/base/IPAddress.h
+
+/home/hu/rabbit/base/IPAddress.h
+string
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+
+/home/hu/rabbit/base/Socket.cpp
+Socket.h
+/home/hu/rabbit/base/Socket.h
+unistd.h
+-
+
+/home/hu/rabbit/base/Socket.h
+sys/types.h
+-
+sys/socket.h
+-
+IPAddress.h
+/home/hu/rabbit/base/IPAddress.h
+
