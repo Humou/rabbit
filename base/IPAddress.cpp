@@ -19,3 +19,14 @@
      }
      return std::string(ip) + ": " + std::to_string(port_);
  }
+
+ IPAddress::IPAddress(const std::string &ip, unsigned short port){
+
+   inet_pton(AF_INET, ip.c_str(), &addr_in_.sin_addr.s_addr);
+
+   ip_ = ntohl(addr_in_.sin_addr.s_addr);
+   port_ = port;
+   addr_in_.sin_family = AF_INET;
+   addr_in_.sin_port = htons(port_);
+
+ }

@@ -22,7 +22,9 @@ public:
     void closeOrDie();
 
     void write_n(void *buf, size_t count);
-    void read_n(void *buf, size_t count);
+
+    int read(void *buf, size_t count);
+    int read_n(void *buf, size_t count);
     
 static int tcpSocket();
 private:

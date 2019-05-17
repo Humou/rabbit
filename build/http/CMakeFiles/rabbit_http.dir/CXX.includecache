@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hu/rabbit/http/HttpRequest.cpp
+HttpRequest.h
+/home/hu/rabbit/http/HttpRequest.h
+
+/home/hu/rabbit/http/HttpRequest.h
+string
+-
+unordered_map
+-
+

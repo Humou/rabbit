@@ -58,17 +58,29 @@ void Socket::write_n(void *buf, size_t count){
     }
 }
 
-void Socket::read_n(void *buf, size_t count){
-    size_t rw = 0;
-    while(rw < count){
-        int rt = ::read(fd_, buf + rw, count - rw);
+int Socket::read(void *buf, size_t count){
+    size_t rd  = ::read(fd_, buf, count);
+    if(rd == -1){
+        perror("Socket::read");
+        exit(1);
+    }
+
+    return rd;
+}
+
+int Socket::read_n(void *buf, size_t count){
+    size_t rd = 0;
+    while(rd < count){
+        int rt = ::read(fd_, buf + rd, count - rd);
         if(rt == -1){
             perror("Socket::read_n");
             exit(1);
         }
-
-        rw += rt;
+        else if(rt == 0) return rd;
+        rd += rt;
     }
+
+    return rd;
 }
 
  int Socket::tcpSocket(){

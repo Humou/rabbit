@@ -9,6 +9,7 @@
 class IPAddress{
 public:
     IPAddress(unsigned long ip, unsigned short port);
+    IPAddress(const std::string &ip, unsigned short port);
     std::string IpPortString();
     sockaddr_in addr_in() const{ return addr_in_;}
 private:

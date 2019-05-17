@@ -1,2 +1,0 @@
-/usr/bin/ar qc librabbit_base.a  CMakeFiles/rabbit_base.dir/IPAddress.cpp.o CMakeFiles/rabbit_base.dir/Socket.cpp.o
-/usr/bin/ranlib librabbit_base.a
