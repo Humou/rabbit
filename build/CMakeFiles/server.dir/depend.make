@@ -3,6 +3,7 @@
 
 CMakeFiles/server.dir/main.cpp.o: ../base/IPAddress.h
 CMakeFiles/server.dir/main.cpp.o: ../base/Socket.h
+CMakeFiles/server.dir/main.cpp.o: ../http/HttpHandler.h
 CMakeFiles/server.dir/main.cpp.o: ../http/HttpRequest.h
 CMakeFiles/server.dir/main.cpp.o: ../main.cpp
 

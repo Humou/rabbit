@@ -125,6 +125,33 @@ rabbit_http/fast:
 	cd /home/hu/rabbit/build && $(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/build
 .PHONY : rabbit_http/fast
 
+HttpHandler.o: HttpHandler.cpp.o
+
+.PHONY : HttpHandler.o
+
+# target to build an object file
+HttpHandler.cpp.o:
+	cd /home/hu/rabbit/build && $(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o
+.PHONY : HttpHandler.cpp.o
+
+HttpHandler.i: HttpHandler.cpp.i
+
+.PHONY : HttpHandler.i
+
+# target to preprocess a source file
+HttpHandler.cpp.i:
+	cd /home/hu/rabbit/build && $(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.i
+.PHONY : HttpHandler.cpp.i
+
+HttpHandler.s: HttpHandler.cpp.s
+
+.PHONY : HttpHandler.s
+
+# target to generate assembly for a file
+HttpHandler.cpp.s:
+	cd /home/hu/rabbit/build && $(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.s
+.PHONY : HttpHandler.cpp.s
+
 HttpRequest.o: HttpRequest.cpp.o
 
 .PHONY : HttpRequest.o
@@ -161,6 +188,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... rabbit_http"
 	@echo "... edit_cache"
+	@echo "... HttpHandler.o"
+	@echo "... HttpHandler.i"
+	@echo "... HttpHandler.s"
 	@echo "... HttpRequest.o"
 	@echo "... HttpRequest.i"
 	@echo "... HttpRequest.s"

@@ -4,5 +4,6 @@
 CMakeFiles/server.dir/main.cpp.o
  /home/hu/rabbit/base/IPAddress.h
  /home/hu/rabbit/base/Socket.h
+ /home/hu/rabbit/http/HttpHandler.h
  /home/hu/rabbit/http/HttpRequest.h
  /home/hu/rabbit/main.cpp

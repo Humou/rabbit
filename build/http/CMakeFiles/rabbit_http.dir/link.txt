@@ -1,2 +1,2 @@
-/usr/bin/ar qc librabbit_http.a  CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o
+/usr/bin/ar qc librabbit_http.a  CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o
 /usr/bin/ranlib librabbit_http.a

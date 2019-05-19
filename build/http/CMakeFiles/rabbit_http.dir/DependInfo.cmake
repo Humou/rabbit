@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/hu/rabbit/http/HttpHandler.cpp" "/home/hu/rabbit/build/http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o"
   "/home/hu/rabbit/http/HttpRequest.cpp" "/home/hu/rabbit/build/http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

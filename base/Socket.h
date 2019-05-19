@@ -1,16 +1,15 @@
 #ifndef SOCKET_H
 #define SOCKET_H
+#include"IPAddress.h"
 
+#include<memory>
 #include<sys/types.h>
 #include<sys/socket.h>
-
-#include"IPAddress.h"
 
 class Socket{
 public:
     Socket(int fd)
     :fd_(fd) {}
-    
     //Socket(const IPAddress& ipAddress);
     //Socket();
 
@@ -31,4 +30,5 @@ private:
     int fd_ = 0;
 };
 
+using SocketPtr = std::shared_ptr<Socket>;
 #endif// SOCK_H

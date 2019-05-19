@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o"
   "CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o"
   "librabbit_http.pdb"
   "librabbit_http.a"

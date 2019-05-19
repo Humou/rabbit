@@ -1,6 +1,8 @@
 #include"HttpRequest.h"
 
-HttpRequest::HttpRequest(const std::string &message){
+HttpRequest::HttpRequest(const std::string &message, SocketPtr socket)
+:sock_(socket)
+{
      size_t pos = message.find("\r\n\r\n");
 
     std::string requestHead;
@@ -48,7 +50,7 @@ HttpRequest::HttpRequest(const std::string &message){
     size_t bg = pos + 1;
     pos = requestLine.find(' ', bg);
     path = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
-
+    path = "../res/html" + path;
     bg = pos + 1;
     version = std::string(requestLine.begin() + bg, requestLine.end());
 }

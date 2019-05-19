@@ -57,9 +57,22 @@ include http/CMakeFiles/rabbit_http.dir/progress.make
 # Include the compile flags for this target's objects.
 include http/CMakeFiles/rabbit_http.dir/flags.make
 
+http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o: http/CMakeFiles/rabbit_http.dir/flags.make
+http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o: ../http/HttpHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o"
+	cd /home/hu/rabbit/build/http && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o -c /home/hu/rabbit/http/HttpHandler.cpp
+
+http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rabbit_http.dir/HttpHandler.cpp.i"
+	cd /home/hu/rabbit/build/http && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hu/rabbit/http/HttpHandler.cpp > CMakeFiles/rabbit_http.dir/HttpHandler.cpp.i
+
+http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_http.dir/HttpHandler.cpp.s"
+	cd /home/hu/rabbit/build/http && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/http/HttpHandler.cpp -o CMakeFiles/rabbit_http.dir/HttpHandler.cpp.s
+
 http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o: http/CMakeFiles/rabbit_http.dir/flags.make
 http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o: ../http/HttpRequest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o"
 	cd /home/hu/rabbit/build/http && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o -c /home/hu/rabbit/http/HttpRequest.cpp
 
 http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.i: cmake_force
@@ -72,15 +85,17 @@ http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.s: cmake_force
 
 # Object files for target rabbit_http
 rabbit_http_OBJECTS = \
+"CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o" \
 "CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o"
 
 # External object files for target rabbit_http
 rabbit_http_EXTERNAL_OBJECTS =
 
+http/librabbit_http.a: http/CMakeFiles/rabbit_http.dir/HttpHandler.cpp.o
 http/librabbit_http.a: http/CMakeFiles/rabbit_http.dir/HttpRequest.cpp.o
 http/librabbit_http.a: http/CMakeFiles/rabbit_http.dir/build.make
 http/librabbit_http.a: http/CMakeFiles/rabbit_http.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library librabbit_http.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library librabbit_http.a"
 	cd /home/hu/rabbit/build/http && $(CMAKE_COMMAND) -P CMakeFiles/rabbit_http.dir/cmake_clean_target.cmake
 	cd /home/hu/rabbit/build/http && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rabbit_http.dir/link.txt --verbose=$(VERBOSE)
 
