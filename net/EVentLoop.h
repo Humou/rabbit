@@ -7,5 +7,10 @@ public:
     ~EventLoop();
     void loop();
 
-    Epoller poller;
+    void addBridge(BridgePtr &birdge);
+    void removeBirdge(BridgePtr &birdge);
+    
+    Epoller poller_;
 };
+
+using EventLoopPtr = std::shared_ptr<EventLoop>;

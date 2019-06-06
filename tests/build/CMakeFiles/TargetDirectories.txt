@@ -1,0 +1,3 @@
+/home/hu/rabbit/tests/build/CMakeFiles/rebuild_cache.dir
+/home/hu/rabbit/tests/build/CMakeFiles/test.dir
+/home/hu/rabbit/tests/build/CMakeFiles/edit_cache.dir
