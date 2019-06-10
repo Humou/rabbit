@@ -1,3 +1,0 @@
-DEBUG: first log file: /home/hu/rabbit/base/Logger.cpp line: 29 date: 2019 6 6 21:14:4
-DEBUG: second log file: /home/hu/rabbit/base/Logger.cpp line: 29 date: 2019 6 6 21:14:4
-DEBUG: third log file: /home/hu/rabbit/base/Logger.cpp line: 29 date: 2019 6 6 21:14:4

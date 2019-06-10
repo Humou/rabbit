@@ -12,7 +12,7 @@ aux_source_directory(. DIR_SRCS)
 include_directories(
     /home/hu/rabbit/base/
 )
-link_directories("/home/hu/rabbit/base")
+link_directories("/home/hu/rabbit/base/build")
 add_executable(test ${DIR_SRCS})
 
 target_link_libraries(test rabbit_base)
