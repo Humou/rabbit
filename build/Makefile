@@ -208,6 +208,19 @@ test/fast:
 	$(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+#=============================================================================
+# Target rules for targets named echo
+
+# Build rule for target.
+echo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo
+.PHONY : echo
+
+# fast build rule for target.
+echo/fast:
+	$(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/build
+.PHONY : echo/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -224,6 +237,7 @@ help:
 	@echo "... rabbit_net"
 	@echo "... rabbit_http"
 	@echo "... test"
+	@echo "... echo"
 .PHONY : help
 
 

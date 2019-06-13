@@ -1,5 +1,8 @@
 #pragma once
 #include<functional>
-using ReadCallBack = std::function<void()>;
-using WriteCallBack = std::function<void()>;
+
+class TcpConnection;
+using ReadCallBack = std::function<void(std::shared_ptr<TcpConnection> conn)>;
+using WriteCallBack = std::function<void(std::shared_ptr<TcpConnection> conn)>;
+using ConnectionCallBack = std::function<void(std::shared_ptr<TcpConnection> conn)>;
 using ErrorCallBack = std::function<void()>;

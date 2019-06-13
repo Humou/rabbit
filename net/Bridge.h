@@ -17,29 +17,28 @@ public:
     int fd(){return fd_;}
     void handleEvents();
     
-    void setReadCallBack(ReadCallBack cb){
+    void setReadCallBack(std::function<void()> cb){
         readCallBack_ = cb;
-        events_|= EPOLLIN;
+        events_ |= EPOLLIN;
     }
 
-    void setWriteCallBack(WriteCallBack cb){
-        writeCallBack_ = cb;
-        events_ |= EPOLLOUT;
-    }
-
-    void setErrorCallBack(ErrorCallBack cb){
+    void setErrorCallBack(std::function<void()> cb){
         errorCallBack_ = cb;
     }
 
+    void setWriteCallBack(std::function<void()> cb){
+        writeCallBack_ = cb;
+        events_ = events_ | EPOLLOUT;
+    }
 private:
-    uint32_t events_;
+    uint32_t events_ = 0;
     uint32_t revents_;
     int fd_;
     std::shared_ptr<EventLoop> loop_;
 
-    ReadCallBack readCallBack_;
-    WriteCallBack writeCallBack_;
-    ErrorCallBack errorCallBack_;
+    std::function<void()> readCallBack_;
+    std::function<void()> writeCallBack_;
+    std::function<void()>  errorCallBack_;
 };
 
 using BridgePtr = std::shared_ptr<Bridge>; 

@@ -27,8 +27,6 @@ net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/Epoller.h
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/TcpConnection.cpp
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/TcpConnection.h
 
-net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../base/IPAddress.h
-net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../base/Socket.h
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../net/Bridge.h
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../net/Buffer.h
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../net/Callbacks.h

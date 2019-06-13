@@ -32,3 +32,10 @@
 /home/hu/rabbit/build/tests/CMakeFiles/install/local.dir
 /home/hu/rabbit/build/tests/CMakeFiles/rebuild_cache.dir
 /home/hu/rabbit/build/tests/CMakeFiles/install.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/install/strip.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/edit_cache.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/echo.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/install.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/rebuild_cache.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/list_install_components.dir
+/home/hu/rabbit/build/tests/echo/CMakeFiles/install/local.dir

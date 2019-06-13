@@ -15,6 +15,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../http/CMakeLists.txt"
   "../net/CMakeLists.txt"
   "../tests/CMakeLists.txt"
+  "../tests/echo/CMakeLists.txt"
   "/usr/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
@@ -47,6 +48,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "net/CMakeFiles/CMakeDirectoryInformation.cmake"
   "http/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/echo/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -55,4 +57,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "net/CMakeFiles/rabbit_net.dir/DependInfo.cmake"
   "http/CMakeFiles/rabbit_http.dir/DependInfo.cmake"
   "tests/CMakeFiles/test.dir/DependInfo.cmake"
+  "tests/echo/CMakeFiles/echo.dir/DependInfo.cmake"
   )

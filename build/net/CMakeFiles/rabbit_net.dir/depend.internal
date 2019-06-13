@@ -28,8 +28,6 @@ net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o
  /home/hu/rabbit/net/TcpConnection.cpp
  /home/hu/rabbit/net/TcpConnection.h
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o
- /home/hu/rabbit/base/IPAddress.h
- /home/hu/rabbit/base/Socket.h
  /home/hu/rabbit/net/Bridge.h
  /home/hu/rabbit/net/Buffer.h
  /home/hu/rabbit/net/Callbacks.h

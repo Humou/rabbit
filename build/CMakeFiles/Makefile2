@@ -89,7 +89,7 @@ base/preinstall:
 base/CMakeFiles/rabbit_base.dir/all:
 	$(MAKE) -f base/CMakeFiles/rabbit_base.dir/build.make base/CMakeFiles/rabbit_base.dir/depend
 	$(MAKE) -f base/CMakeFiles/rabbit_base.dir/build.make base/CMakeFiles/rabbit_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target rabbit_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10 "Built target rabbit_base"
 .PHONY : base/CMakeFiles/rabbit_base.dir/all
 
 # Include target in all.
@@ -144,7 +144,7 @@ net/preinstall:
 net/CMakeFiles/rabbit_net.dir/all:
 	$(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/depend
 	$(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=12,13,14,15,16,17,18 "Built target rabbit_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=14,15,16,17,18,19,20 "Built target rabbit_net"
 .PHONY : net/CMakeFiles/rabbit_net.dir/all
 
 # Include target in all.
@@ -199,7 +199,7 @@ http/preinstall:
 http/CMakeFiles/rabbit_http.dir/all:
 	$(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/depend
 	$(MAKE) -f http/CMakeFiles/rabbit_http.dir/build.make http/CMakeFiles/rabbit_http.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=9,10,11 "Built target rabbit_http"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=11,12,13 "Built target rabbit_http"
 .PHONY : http/CMakeFiles/rabbit_http.dir/all
 
 # Include target in all.
@@ -234,16 +234,18 @@ clean: http/CMakeFiles/rabbit_http.dir/clean
 
 # Convenience name for "all" pass in the directory.
 tests/all: tests/CMakeFiles/test.dir/all
+tests/all: tests/echo/all
 
 .PHONY : tests/all
 
 # Convenience name for "clean" pass in the directory.
 tests/clean: tests/CMakeFiles/test.dir/clean
+tests/clean: tests/echo/clean
 
 .PHONY : tests/clean
 
 # Convenience name for "preinstall" pass in the directory.
-tests/preinstall:
+tests/preinstall: tests/echo/preinstall
 
 .PHONY : tests/preinstall
 
@@ -254,7 +256,7 @@ tests/preinstall:
 tests/CMakeFiles/test.dir/all: base/CMakeFiles/rabbit_base.dir/all
 	$(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/depend
 	$(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=19,20,21 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=21,22,23 "Built target test"
 .PHONY : tests/CMakeFiles/test.dir/all
 
 # Include target in all.
@@ -281,6 +283,62 @@ tests/CMakeFiles/test.dir/clean:
 
 # clean rule for target.
 clean: tests/CMakeFiles/test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory tests/echo
+
+# Convenience name for "all" pass in the directory.
+tests/echo/all: tests/echo/CMakeFiles/echo.dir/all
+
+.PHONY : tests/echo/all
+
+# Convenience name for "clean" pass in the directory.
+tests/echo/clean: tests/echo/CMakeFiles/echo.dir/clean
+
+.PHONY : tests/echo/clean
+
+# Convenience name for "preinstall" pass in the directory.
+tests/echo/preinstall:
+
+.PHONY : tests/echo/preinstall
+
+#=============================================================================
+# Target rules for target tests/echo/CMakeFiles/echo.dir
+
+# All Build rule for target.
+tests/echo/CMakeFiles/echo.dir/all: base/CMakeFiles/rabbit_base.dir/all
+tests/echo/CMakeFiles/echo.dir/all: net/CMakeFiles/rabbit_net.dir/all
+	$(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/depend
+	$(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=1,2 "Built target echo"
+.PHONY : tests/echo/CMakeFiles/echo.dir/all
+
+# Include target in all.
+all: tests/echo/CMakeFiles/echo.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+tests/echo/CMakeFiles/echo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hu/rabbit/build/CMakeFiles 17
+	$(MAKE) -f CMakeFiles/Makefile2 tests/echo/CMakeFiles/echo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hu/rabbit/build/CMakeFiles 0
+.PHONY : tests/echo/CMakeFiles/echo.dir/rule
+
+# Convenience name for target.
+echo: tests/echo/CMakeFiles/echo.dir/rule
+
+.PHONY : echo
+
+# clean rule for target.
+tests/echo/CMakeFiles/echo.dir/clean:
+	$(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/clean
+.PHONY : tests/echo/CMakeFiles/echo.dir/clean
+
+# clean rule for target.
+clean: tests/echo/CMakeFiles/echo.dir/clean
 
 .PHONY : clean
 

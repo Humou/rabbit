@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/epoll.h>
-
+#include<iostream>
 Epoller::Epoller(){
     epoll_fd_ = ::epoll_create(100);
     if(epoll_fd_ == -1){
@@ -17,13 +17,12 @@ void Epoller::addBridge(BridgePtr &bridge){
     int fd = bridge->fd();
     evt.events = bridge->event(); 
     evt.data.fd = fd;
-
     int ret = ::epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, bridge->fd(), &evt);
     if(ret == -1){
         perror("Epoller::addBridge()");
         exit(1);
     }
-     bridges_.push_back(bridge);
+    bridges_.push_back(bridge);
     fdToBridges_[fd] = bridges_.size() - 1;
 }
 
@@ -50,7 +49,6 @@ std::vector<BridgePtr> Epoller::poll(){
         bridge->set_revents(events[i].events);
         activeBriges.push_back(bridges_[idx]);
     }
-
     return activeBriges;
 }
 
