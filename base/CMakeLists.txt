@@ -1,7 +1,9 @@
 cmake_minimum_required (VERSION 3.12.1)
 
-#project(rabbit_base)
+aux_source_directory(. DIR__BASE_SRCS)
+add_library(rabbit_base ${DIR__BASE_SRCS})
 
-aux_source_directory(. DIR__LIB_SRCS)
-add_library(rabbit_base ${DIR__LIB_SRCS})
-#install(TARGETS rabbit_base DESTINATION lib)
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION /usr/local/include)
+install(TARGETS rabbit_base DESTINATION /usr/local/lib)
+

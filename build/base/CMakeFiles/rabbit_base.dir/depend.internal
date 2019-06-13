@@ -11,8 +11,15 @@ base/CMakeFiles/rabbit_base.dir/CountDownLatch.cpp.o
 base/CMakeFiles/rabbit_base.dir/IPAddress.cpp.o
  /home/hu/rabbit/base/IPAddress.cpp
  /home/hu/rabbit/base/IPAddress.h
+base/CMakeFiles/rabbit_base.dir/Logger.cpp.o
+ /home/hu/rabbit/base/Logger.cpp
+ /home/hu/rabbit/base/Logger.h
+ /home/hu/rabbit/base/Outputer.h
 base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o
  /home/hu/rabbit/base/Mutex.cpp
+base/CMakeFiles/rabbit_base.dir/Outputer.cpp.o
+ /home/hu/rabbit/base/Outputer.cpp
+ /home/hu/rabbit/base/Outputer.h
 base/CMakeFiles/rabbit_base.dir/Socket.cpp.o
  /home/hu/rabbit/base/IPAddress.h
  /home/hu/rabbit/base/Socket.cpp

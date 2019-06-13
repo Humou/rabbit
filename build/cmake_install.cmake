@@ -40,7 +40,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hu/rabbit/build/base/cmake_install.cmake")
+  include("/home/hu/rabbit/build/net/cmake_install.cmake")
   include("/home/hu/rabbit/build/http/cmake_install.cmake")
+  include("/home/hu/rabbit/build/tests/cmake_install.cmake")
 
 endif()
 

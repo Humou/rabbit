@@ -13,6 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.12.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeSystem.cmake"
   "../http/CMakeLists.txt"
+  "../net/CMakeLists.txt"
+  "../tests/CMakeLists.txt"
   "/usr/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
@@ -42,12 +44,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "net/CMakeFiles/CMakeDirectoryInformation.cmake"
   "http/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/server.dir/DependInfo.cmake"
   "base/CMakeFiles/rabbit_base.dir/DependInfo.cmake"
+  "net/CMakeFiles/rabbit_net.dir/DependInfo.cmake"
   "http/CMakeFiles/rabbit_http.dir/DependInfo.cmake"
+  "tests/CMakeFiles/test.dir/DependInfo.cmake"
   )

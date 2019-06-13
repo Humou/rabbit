@@ -44,6 +44,10 @@ sys/types.h
 HttpRequest.h
 /home/hu/rabbit/http/HttpRequest.h
 
+/home/hu/rabbit/http/HttpRequest.cpp
+HttpRequest.h
+/home/hu/rabbit/http/HttpRequest.h
+
 /home/hu/rabbit/http/HttpRequest.h
 ../base/Socket.h
 /home/hu/rabbit/base/Socket.h

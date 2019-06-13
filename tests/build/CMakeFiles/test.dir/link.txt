@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/test.dir/LoggerTest.cpp.o CMakeFiles/test.dir/test.cpp.o  -o test  -L/home/hu/rabbit/base/build -Wl,-rpath,/home/hu/rabbit/base/build -lrabbit_base 

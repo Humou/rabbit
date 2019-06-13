@@ -96,9 +96,22 @@ base/CMakeFiles/rabbit_base.dir/IPAddress.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_base.dir/IPAddress.cpp.s"
 	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/base/IPAddress.cpp -o CMakeFiles/rabbit_base.dir/IPAddress.cpp.s
 
+base/CMakeFiles/rabbit_base.dir/Logger.cpp.o: base/CMakeFiles/rabbit_base.dir/flags.make
+base/CMakeFiles/rabbit_base.dir/Logger.cpp.o: ../base/Logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/CMakeFiles/rabbit_base.dir/Logger.cpp.o"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_base.dir/Logger.cpp.o -c /home/hu/rabbit/base/Logger.cpp
+
+base/CMakeFiles/rabbit_base.dir/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rabbit_base.dir/Logger.cpp.i"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hu/rabbit/base/Logger.cpp > CMakeFiles/rabbit_base.dir/Logger.cpp.i
+
+base/CMakeFiles/rabbit_base.dir/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_base.dir/Logger.cpp.s"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/base/Logger.cpp -o CMakeFiles/rabbit_base.dir/Logger.cpp.s
+
 base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o: base/CMakeFiles/rabbit_base.dir/flags.make
 base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o: ../base/Mutex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o"
 	cd /home/hu/rabbit/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_base.dir/Mutex.cpp.o -c /home/hu/rabbit/base/Mutex.cpp
 
 base/CMakeFiles/rabbit_base.dir/Mutex.cpp.i: cmake_force
@@ -109,9 +122,22 @@ base/CMakeFiles/rabbit_base.dir/Mutex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_base.dir/Mutex.cpp.s"
 	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/base/Mutex.cpp -o CMakeFiles/rabbit_base.dir/Mutex.cpp.s
 
+base/CMakeFiles/rabbit_base.dir/Outputer.cpp.o: base/CMakeFiles/rabbit_base.dir/flags.make
+base/CMakeFiles/rabbit_base.dir/Outputer.cpp.o: ../base/Outputer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object base/CMakeFiles/rabbit_base.dir/Outputer.cpp.o"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_base.dir/Outputer.cpp.o -c /home/hu/rabbit/base/Outputer.cpp
+
+base/CMakeFiles/rabbit_base.dir/Outputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rabbit_base.dir/Outputer.cpp.i"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hu/rabbit/base/Outputer.cpp > CMakeFiles/rabbit_base.dir/Outputer.cpp.i
+
+base/CMakeFiles/rabbit_base.dir/Outputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_base.dir/Outputer.cpp.s"
+	cd /home/hu/rabbit/build/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/base/Outputer.cpp -o CMakeFiles/rabbit_base.dir/Outputer.cpp.s
+
 base/CMakeFiles/rabbit_base.dir/Socket.cpp.o: base/CMakeFiles/rabbit_base.dir/flags.make
 base/CMakeFiles/rabbit_base.dir/Socket.cpp.o: ../base/Socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/rabbit_base.dir/Socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object base/CMakeFiles/rabbit_base.dir/Socket.cpp.o"
 	cd /home/hu/rabbit/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_base.dir/Socket.cpp.o -c /home/hu/rabbit/base/Socket.cpp
 
 base/CMakeFiles/rabbit_base.dir/Socket.cpp.i: cmake_force
@@ -127,7 +153,9 @@ rabbit_base_OBJECTS = \
 "CMakeFiles/rabbit_base.dir/Condition.cpp.o" \
 "CMakeFiles/rabbit_base.dir/CountDownLatch.cpp.o" \
 "CMakeFiles/rabbit_base.dir/IPAddress.cpp.o" \
+"CMakeFiles/rabbit_base.dir/Logger.cpp.o" \
 "CMakeFiles/rabbit_base.dir/Mutex.cpp.o" \
+"CMakeFiles/rabbit_base.dir/Outputer.cpp.o" \
 "CMakeFiles/rabbit_base.dir/Socket.cpp.o"
 
 # External object files for target rabbit_base
@@ -136,11 +164,13 @@ rabbit_base_EXTERNAL_OBJECTS =
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/Condition.cpp.o
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/CountDownLatch.cpp.o
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/IPAddress.cpp.o
+base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/Logger.cpp.o
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/Mutex.cpp.o
+base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/Outputer.cpp.o
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/Socket.cpp.o
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/build.make
 base/librabbit_base.a: base/CMakeFiles/rabbit_base.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library librabbit_base.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library librabbit_base.a"
 	cd /home/hu/rabbit/build/base && $(CMAKE_COMMAND) -P CMakeFiles/rabbit_base.dir/cmake_clean_target.cmake
 	cd /home/hu/rabbit/build/base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rabbit_base.dir/link.txt --verbose=$(VERBOSE)
 

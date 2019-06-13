@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/test.dir/LoggerTest.cpp.o CMakeFiles/test.dir/test.cpp.o  -o test ../base/librabbit_base.a 

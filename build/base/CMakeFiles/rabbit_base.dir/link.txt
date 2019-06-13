@@ -1,2 +1,2 @@
-/usr/bin/ar qc librabbit_base.a  CMakeFiles/rabbit_base.dir/Condition.cpp.o CMakeFiles/rabbit_base.dir/CountDownLatch.cpp.o CMakeFiles/rabbit_base.dir/IPAddress.cpp.o CMakeFiles/rabbit_base.dir/Mutex.cpp.o CMakeFiles/rabbit_base.dir/Socket.cpp.o
+/usr/bin/ar qc librabbit_base.a  CMakeFiles/rabbit_base.dir/Condition.cpp.o CMakeFiles/rabbit_base.dir/CountDownLatch.cpp.o CMakeFiles/rabbit_base.dir/IPAddress.cpp.o CMakeFiles/rabbit_base.dir/Logger.cpp.o CMakeFiles/rabbit_base.dir/Mutex.cpp.o CMakeFiles/rabbit_base.dir/Outputer.cpp.o CMakeFiles/rabbit_base.dir/Socket.cpp.o
 /usr/bin/ranlib librabbit_base.a

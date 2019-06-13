@@ -5,9 +5,12 @@
 
 #include"Callbacks.h"
 
+class EventLoop;
+
 class Bridge{
 public:
-    Bridge(int fd): fd_(fd){}
+    Bridge(int fd,  std::shared_ptr<EventLoop> &loop);
+
     
     uint32_t event(){return events_;}
     void set_revents(uint32_t revents){ revents_ = revents; }
@@ -32,6 +35,7 @@ private:
     uint32_t events_;
     uint32_t revents_;
     int fd_;
+    std::shared_ptr<EventLoop> loop_;
 
     ReadCallBack readCallBack_;
     WriteCallBack writeCallBack_;
