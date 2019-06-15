@@ -39,17 +39,16 @@ void TcpServer::run(){
     std::cout<<"sever is running"<<std::endl;
 
     TcpConnectionPtr conn = std::make_shared<TcpConnection>(listenfd_, loop_);
-    conn->setReadCallBack(std::bind(&TcpServer::readCallBack, this, std::placeholders::_1));
-    conn->setConnectionCallBack(std::bind(&TcpServer::connectionCallback, this, std::placeholders::_1));
+    //conn->setReadCallBack(std::bind(&TcpServer::readCallBack, this, std::placeholders::_1));
+    conn->set_connCallBack(std::bind(&TcpServer::connectionCallback, this, std::placeholders::_1));
     conn->registerToLoop();
     loop_->loop();
 }
 
  void TcpServer::readCallBack(std::shared_ptr<TcpConnection> conn){
      auto message = conn->readAllAsString();
-     std::cout<<"receive:"<<message<<std::endl;
-
-     conn->writeString(message);
+     if(!message.empty())std::cout<<"receive:"<<message;
+     conn->writeString("hi client: " + message);
  }
 
  void TcpServer::writeCallBack(std::shared_ptr<TcpConnection> conn){
@@ -60,8 +59,7 @@ void TcpServer::run(){
     int clientfd = ::accept4(listenfd_, NULL, NULL, SOCK_NONBLOCK);
     if(clientfd == -1) return;
     TcpConnectionPtr conn = std::make_shared<TcpConnection>(clientfd, loop_);
-    conn->setReadCallBack(std::bind(&TcpServer::readCallBack, this, std::placeholders::_1));
-    conn->setWriteCalBack(std::bind(&TcpServer::writeCallBack, this, std::placeholders::_1));
+    conn->set_readCallBack(std::bind(&TcpServer::readCallBack, this, std::placeholders::_1));
     conn->registerToLoop();
     conections.push_back(conn);
  }

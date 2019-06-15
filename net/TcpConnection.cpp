@@ -8,48 +8,37 @@ TcpConnection::TcpConnection(int fd, EventLoopPtr &eventLoop)
     fd_(fd),
     bridge_(std::make_shared<Bridge>(fd_, loop_))
 {
-}
-void TcpConnection::setReadCallBack(ReadCallBack cb){
-    readCallBack_ = cb;
-    bridge_->setReadCallBack(std::bind(&TcpConnection::handleRead, this));
-}
-
-void TcpConnection::setWriteCalBack(WriteCallBack cb){
-    writeCallBack_ = cb;
-    bridge_->setWriteCallBack(std::bind(&TcpConnection::handleWrite, this));
+    bridge_->set_handleRead(std::bind(&TcpConnection::handleRead, this));
+    bridge_->set_handleWrite(std::bind(&TcpConnection::handleWrite, this));
+    bridge_->set_handleDisConn(std::bind(&TcpConnection::handleDisConn, this));
+    bridge_->set_handleError(std::bind(&TcpConnection::handleError, this));
 }
 
  void TcpConnection::handleRead(){
-    if(connectionCallBack_){
-        connectionCallBack_(shared_from_this());
+    if(connCallBack_){
+        connCallBack_(shared_from_this());
         return;
     }
-     int ret = inputBuffer_.readFd(fd_, nullptr);
-     if(ret == -1) {
-         return;
-     }
-     else if(ret == 0){
-        return;
-     }
-    
-     if(readCallBack_) readCallBack_(shared_from_this());
+
+    int ret = inputBuffer_.readFd(fd_, nullptr);
+    if(readCallBack_) readCallBack_(shared_from_this());
  }
 
  void TcpConnection::handleWrite(){
 
-     if(writeCallBack_) writeCallBack_(shared_from_this());
-     int ret = outPutBuffer_.writeFd(fd_, nullptr);
-     if(ret == -1){
-         return;
-     }
-     else if(ret == 0){
-         //close
-     }
- }
+    if(writeCallBack_) writeCallBack_(shared_from_this());
+    int ret = outPutBuffer_.writeFd(fd_, nullptr);
+}
 
- void TcpConnection::handleConnection(){
-     if(connectionCallBack_) connectionCallBack_(shared_from_this());
- }
+void TcpConnection::handleError(){
+    if(errorCallBack_) errorCallBack_(shared_from_this());
+}
+
+void TcpConnection::handleDisConn(){
+    if(outPutBuffer_.readableBytes() > 0) return;
+    ::close(fd_);
+}
+
  void TcpConnection::registerToLoop(){
     loop_->addBridge(bridge_);
  }

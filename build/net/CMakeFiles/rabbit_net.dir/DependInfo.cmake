@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hu/rabbit/net/Buffer.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/Buffer.cpp.o"
   "/home/hu/rabbit/net/Epoller.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/Epoller.cpp.o"
   "/home/hu/rabbit/net/EventLoop.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.o"
+  "/home/hu/rabbit/net/TcpClient.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o"
   "/home/hu/rabbit/net/TcpConnection.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o"
   "/home/hu/rabbit/net/TcpServer.cpp" "/home/hu/rabbit/build/net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o"
   )
@@ -19,6 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/hu/rabbit/build/base/CMakeFiles/rabbit_base.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -12,6 +12,7 @@
 /usr/local/include/Callbacks.h
 /usr/local/include/EVentLoop.h
 /usr/local/include/Epoller.h
+/usr/local/include/TcpClient.h
 /usr/local/include/TcpConnection.h
 /usr/local/include/TcpServer.h
 /usr/local/lib/librabbit_net.a

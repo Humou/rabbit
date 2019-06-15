@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -78,18 +90,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -112,17 +112,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,46 +157,88 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/echo/CMakeFiles/echo.dir/rule:
-	cd /home/hu/rabbit/build && $(MAKE) -f CMakeFiles/Makefile2 tests/echo/CMakeFiles/echo.dir/rule
-.PHONY : tests/echo/CMakeFiles/echo.dir/rule
+tests/echo/CMakeFiles/echo_client.dir/rule:
+	cd /home/hu/rabbit/build && $(MAKE) -f CMakeFiles/Makefile2 tests/echo/CMakeFiles/echo_client.dir/rule
+.PHONY : tests/echo/CMakeFiles/echo_client.dir/rule
 
 # Convenience name for target.
-echo: tests/echo/CMakeFiles/echo.dir/rule
+echo_client: tests/echo/CMakeFiles/echo_client.dir/rule
 
-.PHONY : echo
+.PHONY : echo_client
 
 # fast build rule for target.
-echo/fast:
-	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/build
-.PHONY : echo/fast
+echo_client/fast:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_client.dir/build.make tests/echo/CMakeFiles/echo_client.dir/build
+.PHONY : echo_client/fast
 
-echo.o: echo.cpp.o
+# Convenience name for target.
+tests/echo/CMakeFiles/echo_server.dir/rule:
+	cd /home/hu/rabbit/build && $(MAKE) -f CMakeFiles/Makefile2 tests/echo/CMakeFiles/echo_server.dir/rule
+.PHONY : tests/echo/CMakeFiles/echo_server.dir/rule
 
-.PHONY : echo.o
+# Convenience name for target.
+echo_server: tests/echo/CMakeFiles/echo_server.dir/rule
+
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_server.dir/build.make tests/echo/CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+echo_client.o: echo_client.cpp.o
+
+.PHONY : echo_client.o
 
 # target to build an object file
-echo.cpp.o:
-	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/echo.cpp.o
-.PHONY : echo.cpp.o
+echo_client.cpp.o:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_client.dir/build.make tests/echo/CMakeFiles/echo_client.dir/echo_client.cpp.o
+.PHONY : echo_client.cpp.o
 
-echo.i: echo.cpp.i
+echo_client.i: echo_client.cpp.i
 
-.PHONY : echo.i
+.PHONY : echo_client.i
 
 # target to preprocess a source file
-echo.cpp.i:
-	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/echo.cpp.i
-.PHONY : echo.cpp.i
+echo_client.cpp.i:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_client.dir/build.make tests/echo/CMakeFiles/echo_client.dir/echo_client.cpp.i
+.PHONY : echo_client.cpp.i
 
-echo.s: echo.cpp.s
+echo_client.s: echo_client.cpp.s
 
-.PHONY : echo.s
+.PHONY : echo_client.s
 
 # target to generate assembly for a file
-echo.cpp.s:
-	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/echo.cpp.s
-.PHONY : echo.cpp.s
+echo_client.cpp.s:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_client.dir/build.make tests/echo/CMakeFiles/echo_client.dir/echo_client.cpp.s
+.PHONY : echo_client.cpp.s
+
+echo_server.o: echo_server.cpp.o
+
+.PHONY : echo_server.o
+
+# target to build an object file
+echo_server.cpp.o:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_server.dir/build.make tests/echo/CMakeFiles/echo_server.dir/echo_server.cpp.o
+.PHONY : echo_server.cpp.o
+
+echo_server.i: echo_server.cpp.i
+
+.PHONY : echo_server.i
+
+# target to preprocess a source file
+echo_server.cpp.i:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_server.dir/build.make tests/echo/CMakeFiles/echo_server.dir/echo_server.cpp.i
+.PHONY : echo_server.cpp.i
+
+echo_server.s: echo_server.cpp.s
+
+.PHONY : echo_server.s
+
+# target to generate assembly for a file
+echo_server.cpp.s:
+	cd /home/hu/rabbit/build && $(MAKE) -f tests/echo/CMakeFiles/echo_server.dir/build.make tests/echo/CMakeFiles/echo_server.dir/echo_server.cpp.s
+.PHONY : echo_server.cpp.s
 
 # Help Target
 help:
@@ -205,15 +247,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... echo_client"
 	@echo "... edit_cache"
-	@echo "... echo"
-	@echo "... install"
+	@echo "... echo_server"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
-	@echo "... install/local"
-	@echo "... echo.o"
-	@echo "... echo.i"
-	@echo "... echo.s"
+	@echo "... install"
+	@echo "... echo_client.o"
+	@echo "... echo_client.i"
+	@echo "... echo_client.s"
+	@echo "... echo_server.o"
+	@echo "... echo_server.i"
+	@echo "... echo_server.s"
 .PHONY : help
 
 

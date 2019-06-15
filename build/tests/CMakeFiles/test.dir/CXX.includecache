@@ -16,11 +16,3 @@ Logger.h
 Logger.h
 /home/hu/rabbit/tests/Logger.h
 
-/home/hu/rabbit/tests/test.cpp
-Socket.h
--
-iostream
--
-LoggerTest.h
-/home/hu/rabbit/tests/LoggerTest.h
-

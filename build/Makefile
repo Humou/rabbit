@@ -209,17 +209,30 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named echo
+# Target rules for targets named echo_client
 
 # Build rule for target.
-echo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 echo
-.PHONY : echo
+echo_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo_client
+.PHONY : echo_client
 
 # fast build rule for target.
-echo/fast:
-	$(MAKE) -f tests/echo/CMakeFiles/echo.dir/build.make tests/echo/CMakeFiles/echo.dir/build
-.PHONY : echo/fast
+echo_client/fast:
+	$(MAKE) -f tests/echo/CMakeFiles/echo_client.dir/build.make tests/echo/CMakeFiles/echo_client.dir/build
+.PHONY : echo_client/fast
+
+#=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) -f tests/echo/CMakeFiles/echo_server.dir/build.make tests/echo/CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
 
 # Help Target
 help:
@@ -237,7 +250,8 @@ help:
 	@echo "... rabbit_net"
 	@echo "... rabbit_http"
 	@echo "... test"
-	@echo "... echo"
+	@echo "... echo_client"
+	@echo "... echo_server"
 .PHONY : help
 
 

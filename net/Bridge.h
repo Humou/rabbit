@@ -17,29 +17,43 @@ public:
     int fd(){return fd_;}
     void handleEvents();
     
-    void setReadCallBack(std::function<void()> cb){
-        readCallBack_ = cb;
+    void set_handleRead(std::function<void()> cb){
+        handleRead_ = cb;
         events_ |= EPOLLIN;
     }
 
-    void setErrorCallBack(std::function<void()> cb){
-        errorCallBack_ = cb;
-    }
-
-    void setWriteCallBack(std::function<void()> cb){
-        writeCallBack_ = cb;
+     void set_handleWrite(std::function<void()> cb){
+        handleWrite_ = cb;
         events_ = events_ | EPOLLOUT;
     }
+
+    void set_handleConn(std::function<void()> cb){
+        handleConn_ = cb;
+    }
+
+    void set_handleDisConn(std::function<void()> cb){
+        handleDisConn_ = cb;
+    }
+
+    void set_handleError(std::function<void()> cb){
+        handleError_ = cb;
+    }
+
+    void enableReading();
+    void enableWriting();
+
 private:
     uint32_t events_ = 0;
     uint32_t revents_;
     int fd_;
     std::shared_ptr<EventLoop> loop_;
 
-    std::function<void()> readCallBack_;
-    std::function<void()> writeCallBack_;
-    std::function<void()>  errorCallBack_;
-};
+    std::function<void()> handleRead_;
+    std::function<void()> handleWrite_;
+    std::function<void()> handleError_;
+    std::function<void()> handleDisConn_;
+    std::function<void()> handleConn_;
+ };
 
 using BridgePtr = std::shared_ptr<Bridge>; 
 

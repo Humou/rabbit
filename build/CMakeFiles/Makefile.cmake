@@ -57,5 +57,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "net/CMakeFiles/rabbit_net.dir/DependInfo.cmake"
   "http/CMakeFiles/rabbit_http.dir/DependInfo.cmake"
   "tests/CMakeFiles/test.dir/DependInfo.cmake"
-  "tests/echo/CMakeFiles/echo.dir/DependInfo.cmake"
+  "tests/echo/CMakeFiles/echo_client.dir/DependInfo.cmake"
+  "tests/echo/CMakeFiles/echo_server.dir/DependInfo.cmake"
   )

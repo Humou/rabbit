@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hu/rabbit/tests/echo/echo_server.cpp
+TcpServer.h
+/home/hu/rabbit/tests/echo/TcpServer.h
+

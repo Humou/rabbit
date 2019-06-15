@@ -39,7 +39,7 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/include/Bridge.h;/usr/local/include/Buffer.h;/usr/local/include/Callbacks.h;/usr/local/include/EVentLoop.h;/usr/local/include/Epoller.h;/usr/local/include/TcpConnection.h;/usr/local/include/TcpServer.h")
+   "/usr/local/include/Bridge.h;/usr/local/include/Buffer.h;/usr/local/include/Callbacks.h;/usr/local/include/EVentLoop.h;/usr/local/include/Epoller.h;/usr/local/include/TcpClient.h;/usr/local/include/TcpConnection.h;/usr/local/include/TcpServer.h")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -52,6 +52,7 @@ file(INSTALL DESTINATION "/usr/local/include" TYPE FILE FILES
     "/home/hu/rabbit/net/Callbacks.h"
     "/home/hu/rabbit/net/EVentLoop.h"
     "/home/hu/rabbit/net/Epoller.h"
+    "/home/hu/rabbit/net/TcpClient.h"
     "/home/hu/rabbit/net/TcpConnection.h"
     "/home/hu/rabbit/net/TcpServer.h"
     )

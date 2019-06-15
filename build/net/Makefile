@@ -279,6 +279,33 @@ EventLoop.cpp.s:
 	cd /home/hu/rabbit/build && $(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.s
 .PHONY : EventLoop.cpp.s
 
+TcpClient.o: TcpClient.cpp.o
+
+.PHONY : TcpClient.o
+
+# target to build an object file
+TcpClient.cpp.o:
+	cd /home/hu/rabbit/build && $(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o
+.PHONY : TcpClient.cpp.o
+
+TcpClient.i: TcpClient.cpp.i
+
+.PHONY : TcpClient.i
+
+# target to preprocess a source file
+TcpClient.cpp.i:
+	cd /home/hu/rabbit/build && $(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.i
+.PHONY : TcpClient.cpp.i
+
+TcpClient.s: TcpClient.cpp.s
+
+.PHONY : TcpClient.s
+
+# target to generate assembly for a file
+TcpClient.cpp.s:
+	cd /home/hu/rabbit/build && $(MAKE) -f net/CMakeFiles/rabbit_net.dir/build.make net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.s
+.PHONY : TcpClient.cpp.s
+
 TcpConnection.o: TcpConnection.cpp.o
 
 .PHONY : TcpConnection.o
@@ -358,6 +385,9 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... TcpClient.o"
+	@echo "... TcpClient.i"
+	@echo "... TcpClient.s"
 	@echo "... TcpConnection.o"
 	@echo "... TcpConnection.i"
 	@echo "... TcpConnection.s"

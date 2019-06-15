@@ -109,9 +109,22 @@ net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_net.dir/EventLoop.cpp.s"
 	cd /home/hu/rabbit/build/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/net/EventLoop.cpp -o CMakeFiles/rabbit_net.dir/EventLoop.cpp.s
 
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: net/CMakeFiles/rabbit_net.dir/flags.make
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/TcpClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o"
+	cd /home/hu/rabbit/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_net.dir/TcpClient.cpp.o -c /home/hu/rabbit/net/TcpClient.cpp
+
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rabbit_net.dir/TcpClient.cpp.i"
+	cd /home/hu/rabbit/build/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hu/rabbit/net/TcpClient.cpp > CMakeFiles/rabbit_net.dir/TcpClient.cpp.i
+
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rabbit_net.dir/TcpClient.cpp.s"
+	cd /home/hu/rabbit/build/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hu/rabbit/net/TcpClient.cpp -o CMakeFiles/rabbit_net.dir/TcpClient.cpp.s
+
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: net/CMakeFiles/rabbit_net.dir/flags.make
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/TcpConnection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o"
 	cd /home/hu/rabbit/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o -c /home/hu/rabbit/net/TcpConnection.cpp
 
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.i: cmake_force
@@ -124,7 +137,7 @@ net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.s: cmake_force
 
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: net/CMakeFiles/rabbit_net.dir/flags.make
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o: ../net/TcpServer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o"
 	cd /home/hu/rabbit/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rabbit_net.dir/TcpServer.cpp.o -c /home/hu/rabbit/net/TcpServer.cpp
 
 net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.i: cmake_force
@@ -141,6 +154,7 @@ rabbit_net_OBJECTS = \
 "CMakeFiles/rabbit_net.dir/Buffer.cpp.o" \
 "CMakeFiles/rabbit_net.dir/Epoller.cpp.o" \
 "CMakeFiles/rabbit_net.dir/EventLoop.cpp.o" \
+"CMakeFiles/rabbit_net.dir/TcpClient.cpp.o" \
 "CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o" \
 "CMakeFiles/rabbit_net.dir/TcpServer.cpp.o"
 
@@ -151,11 +165,12 @@ net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/Bridge.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/Buffer.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/Epoller.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.o
+net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/TcpServer.cpp.o
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/build.make
 net/librabbit_net.a: net/CMakeFiles/rabbit_net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library librabbit_net.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hu/rabbit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library librabbit_net.a"
 	cd /home/hu/rabbit/build/net && $(CMAKE_COMMAND) -P CMakeFiles/rabbit_net.dir/cmake_clean_target.cmake
 	cd /home/hu/rabbit/build/net && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rabbit_net.dir/link.txt --verbose=$(VERBOSE)
 

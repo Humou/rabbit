@@ -19,6 +19,15 @@ net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.o: ../net/EVentLoop.h
 net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.o: ../net/Epoller.h
 net/CMakeFiles/rabbit_net.dir/EventLoop.cpp.o: ../net/EventLoop.cpp
 
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/Bridge.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/Buffer.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/Callbacks.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/EVentLoop.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/Epoller.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/TcpClient.cpp
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/TcpClient.h
+net/CMakeFiles/rabbit_net.dir/TcpClient.cpp.o: ../net/TcpConnection.h
+
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/Bridge.h
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/Buffer.h
 net/CMakeFiles/rabbit_net.dir/TcpConnection.cpp.o: ../net/Callbacks.h

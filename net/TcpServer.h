@@ -15,6 +15,7 @@ public:
     void writeCallBack(std::shared_ptr<TcpConnection> conn);
 
     void connectionCallback(std::shared_ptr<TcpConnection> listenConn);
+    
 private:
     std::vector<TcpConnectionPtr> conections;
     int listenfd_;

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hu/rabbit/tests/echo/echo_client.cpp
+TcpClient.h
+/home/hu/rabbit/tests/echo/TcpClient.h
+EVentLoop.h
+/home/hu/rabbit/tests/echo/EVentLoop.h
+
