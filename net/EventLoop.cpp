@@ -19,8 +19,8 @@ void EventLoop::loop(){
 
 void EventLoop::addBridge(BridgePtr &bridge){
    poller_.addBridge(bridge);
+   //log
 }
-
 void EventLoop::removeBirdge(BridgePtr &bridge){
    poller_.removeBridge(bridge);
 }
