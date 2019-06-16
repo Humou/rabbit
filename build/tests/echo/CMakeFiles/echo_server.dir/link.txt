@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/echo_server.dir/echo_server.cpp.o  -o echo_server ../../base/librabbit_base.a ../../net/librabbit_net.a ../../base/librabbit_base.a 

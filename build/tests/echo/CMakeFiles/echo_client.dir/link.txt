@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/echo_client.dir/echo_client.cpp.o  -o echo_client ../../base/librabbit_base.a ../../net/librabbit_net.a ../../base/librabbit_base.a 
