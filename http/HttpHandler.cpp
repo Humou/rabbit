@@ -5,7 +5,7 @@
 #include<fcntl.h>
 #include<sys/stat.h>
 #include<sys/types.h>
-
+/* 
  void HttpHandler::handler(){
    if(httpReq_.method == "GET"){
       int fd_;
@@ -52,3 +52,4 @@
     }
 
  }
+ */

@@ -1,7 +1,7 @@
 #include"Socket.h"
 
 #include<unistd.h>
-
+/* 
  void Socket::bindOrDie(const IPAddress &ipaddr){
      auto addr_in = ipaddr.addr_in();
      int ret = ::bind(fd_, (sockaddr*)&addr_in, sizeof(sockaddr_in));
@@ -90,3 +90,48 @@ int Socket::read_n(void *buf, size_t count){
         exit(1);
     }
  }
+ */
+namespace Socket{
+    int createListenFd(const IPAddress &listenAddr){
+    int listenfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, IPPROTO_TCP);
+    if(listenfd == -1){
+        perror("TcpServer(const IPAddress &listenAddr)");
+        return -1;
+    }
+    
+    int on = 1;
+    if(::setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const void*)&on, sizeof(int)) < 0){
+        perror("address");
+        return -1;
+    }
+    if(::setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (const void*)&on, sizeof(int)) < 0){
+        perror("port");
+        return -1;
+    }
+    
+    auto addr_in = listenAddr.addr_in();
+    int ret = ::bind(listenfd, (sockaddr*)&addr_in, sizeof(sockaddr_in));
+    if(ret == -1){
+        perror("TcpServer(const IPAddress &listenAddr)");
+        return -1;
+    }
+
+    return listenfd;
+    }
+
+    void listenOrDie(int fd_, int backlog){
+        int ret = ::listen(fd_, backlog);
+        if(ret == -1){
+            perror("Socket::listenOrDie");
+            exit(1);
+     }
+    }
+
+    int createClientFd(int listenfd){
+        int clientfd = ::accept4(listenfd, NULL, NULL, SOCK_NONBLOCK);
+        if(clientfd == -1){
+            perror("Socket::createClientFd");
+            return -1;
+        }
+    }
+}

@@ -1,7 +1,6 @@
-#ifndef HTTPHANDLER_H
-#define HTTPHANDLER_H
-#include"HttpRequest.h"
 
+#include"HttpRequest.h"
+/* 
 class HttpHandler{
 public:
     HttpHandler(const HttpRequest &httpRequest)
@@ -14,3 +13,4 @@ private:
 };
 
 #endif
+*/

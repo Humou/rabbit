@@ -1,5 +1,5 @@
 #include"HttpRequest.h"
-
+/* 
 HttpRequest::HttpRequest(const std::string &message, SocketPtr socket)
 :sock_(socket)
 {
@@ -81,3 +81,4 @@ void HttpRequest::printHead(){
     }
     printf("\n\n");
 }
+*/

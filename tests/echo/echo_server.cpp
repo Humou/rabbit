@@ -1,6 +1,6 @@
-#include"TcpServer.h"
+#include"EchoServer.h"
 
 int main(){
-    TcpServer server(IPAddress("127.0.0.1", 4000));
+    EchoServer server(IPAddress("127.0.0.1", 4000));
     server.run();
 }

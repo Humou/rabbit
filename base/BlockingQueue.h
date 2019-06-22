@@ -9,7 +9,7 @@ public:
     BlockingQueue()
     :
     mutex_(),
-    con_(mutex_),
+    notEmpty_(mutex_),
     queue_()
     {}
 

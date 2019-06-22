@@ -1,6 +1,5 @@
-#ifndef HTTPREQUEST_H
-#define HTTPREQUEST_H
 
+/* 
 #include"../base/Socket.h"
 #include<string>
 #include<unordered_map>
@@ -22,3 +21,4 @@ public:
 };
 
 #endif
+*/

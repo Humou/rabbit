@@ -1,11 +1,10 @@
-#ifndef SOCKET_H
-#define SOCKET_H
+#pragma once
 #include"IPAddress.h"
 
 #include<memory>
 #include<sys/types.h>
 #include<sys/socket.h>
-
+/* 
 class Socket{
 public:
     Socket(int fd)
@@ -31,4 +30,11 @@ private:
 };
 
 using SocketPtr = std::shared_ptr<Socket>;
-#endif// SOCK_H
+*/
+
+namespace Socket{
+    int createListenFd(const IPAddress &listenAddr);
+    void listenOrDie(int fd_, int backlog);
+   
+    int createClientFd(int listenfd);
+}
