@@ -1,12 +1,9 @@
-
-/* 
-#include"../base/Socket.h"
 #include<string>
 #include<unordered_map>
 
 class HttpRequest{
 public:
-    HttpRequest(const std::string &message, SocketPtr socket);
+    HttpRequest(const std::string &message);
     void print();
     void printHead();
  
@@ -16,9 +13,4 @@ public:
     
     std::string content;
     std::unordered_map<std::string, std::string> parameters;
-
-    SocketPtr sock_;
 };
-
-#endif
-*/

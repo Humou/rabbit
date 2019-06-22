@@ -6,7 +6,7 @@
 class EventLoop;
 class EventHandler :public std::enable_shared_from_this<EventHandler>{
 public:
-    EventHandler(int fd_, uint32_t events, std::shared_ptr<EventLoop> &loop);
+    EventHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop);
 
     void handleEvents();
 

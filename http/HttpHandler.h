@@ -1,16 +1,13 @@
-
 #include"HttpRequest.h"
-/* 
-class HttpHandler{
-public:
-    HttpHandler(const HttpRequest &httpRequest)
-    : httpReq_(httpRequest){}
+#include"../net/EventHandler.h"
 
-    void handler();
+class HttpHandler : public EventHandler{
+public:
+    HttpHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop);
+
+    void handleRead() override;
+    void handleWrite() override;
 
 private:
-    HttpRequest httpReq_;
+    //HttpRequest httpReq_;
 };
-
-#endif
-*/

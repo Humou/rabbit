@@ -1,5 +1,4 @@
- #include"HttpHandler.h"
-
+#include"HttpHandler.h"
 #include<unistd.h>
 #include<stdio.h>
 #include<fcntl.h>
@@ -53,3 +52,8 @@
 
  }
  */
+HttpHandler::HttpHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop)
+:EventHandler(fd_, events, loop)
+{
+
+}

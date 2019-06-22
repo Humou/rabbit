@@ -1,7 +1,6 @@
 #include"HttpRequest.h"
-/* 
-HttpRequest::HttpRequest(const std::string &message, SocketPtr socket)
-:sock_(socket)
+
+HttpRequest::HttpRequest(const std::string &message)
 {
      size_t pos = message.find("\r\n\r\n");
 
@@ -67,7 +66,6 @@ void HttpRequest::print(){
     if(parameters.size() > 0) printf("\n");
     else printf("\n\n");
 
-    //printf("%d %s\n", content.size(), content.c_str());
     if(content.size() > 0) printf("%s\n", content.c_str());
 }
 
@@ -81,4 +79,3 @@ void HttpRequest::printHead(){
     }
     printf("\n\n");
 }
-*/
