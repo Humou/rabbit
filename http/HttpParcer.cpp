@@ -1,9 +1,9 @@
+#include"HttpParser.h"
 #include"HttpRequest.h"
-/* 
-HttpRequest::HttpRequest(const std::string &message)
-{
+#include<iostream>
+HttpRequest HttpParser::httpRequestFromString(const std::string &message){
+    HttpRequest req;
     size_t pos = message.find("\r\n\r\n");
-
     std::string requestHead;
     //std::string requestBody;
 
@@ -13,7 +13,7 @@ HttpRequest::HttpRequest(const std::string &message)
     else{
         requestHead =  std::string (message.begin(), message.begin() + pos);
         pos = pos + 4;
-        if(pos < message.size()) content =  std::string (message.begin() + pos, message.end());
+        if(pos < message.size()) req.content =  std::string (message.begin() + pos, message.end());
     }
     
     pos = requestHead.find('\n');
@@ -39,46 +39,20 @@ HttpRequest::HttpRequest(const std::string &message)
             colonPos++;
         std::string value(line.begin() + colonPos, line.end());
 
-        parameters[name] = value;
+        req.parameters[name] = value;
     }
     
     //parser request line
     pos = requestLine.find(' ');
-    method = std::string(requestLine.begin(), requestLine.begin() + pos);
+    req.method = std::string(requestLine.begin(), requestLine.begin() + pos);
 
     size_t bg = pos + 1;
     pos = requestLine.find(' ', bg);
-    path = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
-    path = "../res/html" + path;
+    req.path = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
+    //req.path = "../res/html" + req.path;
+    req.path = "." + req.path;
+    std::cout<<"path: "<<req.path<<std::endl;
     bg = pos + 1;
-    version = std::string(requestLine.begin() + bg, requestLine.end());
+    req.version = std::string(requestLine.begin() + bg, requestLine.end());
+    return req;
 }
-*/
-/* 
-void HttpRequest::print(){
-    std::string reqLine = method+ ' ' + path + ' ' + version;
-    printf("%s\n", reqLine.c_str());
-
-    for(auto &p : parameters){
-        std::string cur = p.first + ": " + p.second;
-        printf("%s\n", cur.c_str());
-    }
-
-    if(parameters.size() > 0) printf("\n");
-    else printf("\n\n");
-
-    if(content.size() > 0) printf("%s\n", content.c_str());
-}
-
-void HttpRequest::printHead(){
-    std::string reqLine = method+ ' ' + path + ' ' + version;
-    printf("%s\n", reqLine.c_str());
-
-    for(auto &p : parameters){
-        std::string cur = p.first + ": " + p.second;
-        printf("%s\n", cur.c_str());
-    }
-    printf("\n\n");
-}
-
-*/

@@ -29,7 +29,7 @@ std::vector<std::shared_ptr<EventHandler>> EventLoop::poll(){
    std::vector<epoll_event> events(handlers_.size());
     int numEvents = epoll_wait(epoll_fd_, events.data(), events.size(), -1);
     if(numEvents == -1){
-        perror("Epoller::poll()");
+        perror("EventLoop::poll()");
         exit(1);
     }
 
@@ -50,7 +50,7 @@ void EventLoop::addEventHandler(std::shared_ptr<EventHandler> handler){
     evt.data.fd = fd;
     int ret = ::epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, fd, &evt);
     if(ret == -1){
-        perror("Epoller::addBridge()");
+        perror("EventLoop::addEventHandler()");
         exit(1);
     }
     handlers_.push_back(handler);

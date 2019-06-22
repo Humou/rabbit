@@ -3,7 +3,8 @@
 #include<errno.h>
 #include<sys/uio.h>
 #include <unistd.h>
-
+#include<iostream>
+#include<stdio.h>
 const char Buffer::KCRLF[] = "\r\n";
 const size_t Buffer::KCheapPrepend;
 const size_t Buffer::KInitialSize;
@@ -23,7 +24,9 @@ const size_t Buffer::KInitialSize;
          if(savedErrno) *savedErrno = errno;
          return -1;
      }
-     
+    //std::cout<<"ret: "<<ret<<std::endl;
+    //buf[ret] = '\0';
+    //printf("buf : %s\n", buf);
     append(buf, ret);
     return ret;
  }

@@ -1,11 +1,11 @@
+#pragma once
 #include<string>
 #include<unordered_map>
 
 class HttpRequest{
 public:
-    HttpRequest(const std::string &message);
-    void print();
-    void printHead();
+    //void print();
+    //void printHead();
  
     std::string method;
     std::string version;

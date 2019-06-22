@@ -133,5 +133,7 @@ namespace Socket{
             perror("Socket::createClientFd");
             return -1;
         }
+
+        return clientfd;
     }
 }
