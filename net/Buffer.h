@@ -104,6 +104,9 @@ public:
         hasWritten(len);
     }
 
+    void append(const std::string &data){
+        append(data.c_str(), data.size());
+    }
     void append(const void *data, size_t len){
         append(static_cast<const char*>(data), len);
     }

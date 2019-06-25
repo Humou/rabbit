@@ -2,6 +2,8 @@
 #include"HttpParser.h"
 #include"HttpRequest.h"
 #include"HttpResponse.h"
+#include"../base/Logger.h"
+
 #include<iostream>
 #include<unistd.h>
 #include<stdio.h>
@@ -15,11 +17,18 @@ HttpHandler::HttpHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &lo
 }
 
 void HttpHandler::handleRead(){
-   inputBuffer_.readFd(fd_, nullptr);
+   //Log(LogLevel::INFO, "http request");
+   int rd = inputBuffer_.readFd(fd_, nullptr);
+   if(rd == 0){
+      ::close(fd_);
+      return;
+   }
    auto message = inputBuffer_.retrieveAllASString();
    auto request = HttpParser::httpRequestFromString(message);
+   std::cout<<"recv: "<<std::endl<<message<<std::endl;
    auto response = handleRequest(request);
-   outPutBuffer_.append(response.message().c_str(), response.message().size());
+   outPutBuffer_.append(response.message());
+   std::cout<<"send: "<<std::endl<<response.message()<<std::endl;
 }
 
 void HttpHandler::handleWrite(){
@@ -27,18 +36,18 @@ void HttpHandler::handleWrite(){
  }
 
  HttpResponse HttpHandler::handleRequest(const HttpRequest &req){
-    if(req.method == "GET"){
+    if(req.method_ == "GET"){
       int fd_;
-      if((fd_ = ::open(req.path.c_str(), O_RDONLY)) == -1){
+      if((fd_ = ::open(req.path_.c_str(), O_RDONLY)) == -1){
          //to do
-         perror("HttpHandler::handleRequest(const HttpRequest &req)");
+         Log(LogLevel::INFO, "open failed");
          return HttpResponse();
       }
 
       struct stat statBuf;
       if(fstat(fd_, &statBuf) == -1){
          //to do
-         perror("HttpHandler::handleRequest(const HttpRequest &req)");
+         Log(LogLevel::INFO, "fstat failed");
          return HttpResponse();
       }
       off_t sz = statBuf.st_size;
@@ -47,39 +56,18 @@ void HttpHandler::handleWrite(){
       int ret;
       ret = read(fd_, buf + rd, sz - rd);
       if(ret == -1){
-         perror("HttpHandler::handleRequest(const HttpRequest &req)");
+         Log(LogLevel::INFO, "read failed");
          return HttpResponse();
       }
       rd += ret;
-      /* 
-      while((ret = read(fd_, buf + rd, sz - rd))){
-         if(ret == -1){
-            if(errno == EINTR) continue;
-            else break;
-         }
-         else if(ret == 0){
-            break;
-         }
-         rd += ret;
-      }
-      */
-      if(ret == -1){
-         //to do
-         perror("HttpHandler::handleRequest(const HttpRequest &req)");
-         return HttpResponse();
-      }
 
-      std::string reponseContent(buf, rd);
-
-      std::string message;
-      message += "HTTP/1.0 200 OK\n";
-      message += "Content-Type: text/html\n";
-      message += "Content-Length: " + reponseContent.size();
-
-      message += "\r\n\r\n";
-      message += reponseContent;
+      std::string contents(buf, rd);
       HttpResponse response;
-      response.set_message( message);
+
+      response.set_responseCode(ResponseCode::OK);
+      response.set_keekAlive(false);
+      response.set_contents(contents);
+
       return response;
     }
 

@@ -13,16 +13,16 @@ HttpRequest HttpParser::httpRequestFromString(const std::string &message){
     else{
         requestHead =  std::string (message.begin(), message.begin() + pos);
         pos = pos + 4;
-        if(pos < message.size()) req.content =  std::string (message.begin() + pos, message.end());
+        if(pos < message.size()) req.content_ =  std::string (message.begin() + pos, message.end());
     }
     
-    pos = requestHead.find('\n');
+    pos = requestHead.find('\r\n');
     std::string requestLine(requestHead.begin(), requestHead.begin() + pos);
 
     //parser head parameter
     while(pos != std::string::npos){
         int bg = ++pos;
-        int ed = requestHead.find('\n', pos);
+        int ed = requestHead.find('\r\n', pos);
         std::string line;
         if(ed == std::string::npos){
             line = std::string(requestHead.begin() + bg, requestHead.end());
@@ -39,20 +39,20 @@ HttpRequest HttpParser::httpRequestFromString(const std::string &message){
             colonPos++;
         std::string value(line.begin() + colonPos, line.end());
 
-        req.parameters[name] = value;
+        req.headers_[name] = value;
     }
     
     //parser request line
     pos = requestLine.find(' ');
-    req.method = std::string(requestLine.begin(), requestLine.begin() + pos);
+    req.method_ = std::string(requestLine.begin(), requestLine.begin() + pos);
 
     size_t bg = pos + 1;
     pos = requestLine.find(' ', bg);
-    req.path = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
+    req.path_ = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
     //req.path = "../res/html" + req.path;
-    req.path = "." + req.path;
-    std::cout<<"path: "<<req.path<<std::endl;
+    req.path_ = "." + req.path_;
+    std::cout<<"path: "<<req.path_<<std::endl;
     bg = pos + 1;
-    req.version = std::string(requestLine.begin() + bg, requestLine.end());
+    req.version_ = std::string(requestLine.begin() + bg, requestLine.end());
     return req;
 }

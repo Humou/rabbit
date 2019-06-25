@@ -73,8 +73,9 @@ void Logger::log(LogLevel level, const char *file, int line, const char *func, c
     fmt = localtime(&now);
     int year = fmt->tm_year + 1900, month = fmt->tm_mon + 1, day = fmt->tm_mday;
     int hour = fmt->tm_hour, min = fmt->tm_min, sec = fmt->tm_sec;
-    out<<year<<month<<day<<" "<<hour<<":"<<min<<":"<<sec<<" ";
     out<<logLevelStr_[level]<<" ";
+    out<<message<<" ";
+    out<<year<<month<<day<<" "<<hour<<":"<<min<<":"<<sec<<" ";
     out<<file<<":"<<line<<" "<<func<<"\n";   
     std::string logStr = out.str();
 
