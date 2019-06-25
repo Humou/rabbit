@@ -3,8 +3,8 @@
 #include<unistd.h>
 #include<iostream>
 
-EchoHandler::EchoHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop)
-:EventHandler(fd, events, loop)
+EchoHandler::EchoHandler(int fd, std::shared_ptr<EventLoop> &loop)
+:EventHandler(fd, EPOLLIN|EPOLLOUT, loop)
 {
 
 }

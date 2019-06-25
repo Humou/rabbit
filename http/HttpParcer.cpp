@@ -49,9 +49,6 @@ HttpRequest HttpParser::httpRequestFromString(const std::string &message){
     size_t bg = pos + 1;
     pos = requestLine.find(' ', bg);
     req.path_ = std::string(requestLine.begin() + bg, requestLine.begin() + pos);
-    //req.path = "../res/html" + req.path;
-    req.path_ = "." + req.path_;
-    std::cout<<"path: "<<req.path_<<std::endl;
     bg = pos + 1;
     req.version_ = std::string(requestLine.begin() + bg, requestLine.end());
     return req;

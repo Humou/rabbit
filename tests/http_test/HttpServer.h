@@ -1,7 +1,9 @@
 #pragma once
-#include"HttpAcceptor.h"
+#include"../../net/Acceptor.h"
 #include"../../base/IPAddress.h"
 #include"../../net/EVentLoop.h"
+
+class HttpHandler;
 class HttpServer{
 public:
     HttpServer(const IPAddress &listenAddr);
@@ -9,5 +11,5 @@ public:
 private:
     EventLoopPtr loop_;
     int listenfd_;
-    std::shared_ptr<HttpAcceptor> acceptor_;
+    std::shared_ptr<Acceptor<HttpHandler>> acceptor_;
 };

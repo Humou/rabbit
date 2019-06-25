@@ -1,6 +1,7 @@
-#include"HttpAcceptor.h"
 #include"HttpServer.h"
+#include"../../net/Acceptor.h"
 #include"../../base/Socket.h"
+#include"../../http/HttpHandler.h"
 HttpServer::HttpServer(const IPAddress &listenAddr)
  :loop_(std::make_shared<EventLoop>())
 {
@@ -10,7 +11,7 @@ HttpServer::HttpServer(const IPAddress &listenAddr)
         return;
     }
 
-    acceptor_ = std::make_shared<HttpAcceptor>(listenfd_, EPOLLIN, loop_);
+    acceptor_ = std::make_shared<Acceptor<HttpHandler>>(listenfd_, EPOLLIN, loop_);
     acceptor_->registerToLoop();
 }
 

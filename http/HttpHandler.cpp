@@ -10,8 +10,8 @@
 #include<fcntl.h>
 #include<sys/stat.h>
 #include<sys/types.h>
-HttpHandler::HttpHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop)
-:EventHandler(fd, events, loop)
+HttpHandler::HttpHandler(int fd, std::shared_ptr<EventLoop> &loop)
+:EventHandler(fd, EPOLLIN|EPOLLOUT, loop)
 {
 
 }
@@ -38,7 +38,8 @@ void HttpHandler::handleWrite(){
  HttpResponse HttpHandler::handleRequest(const HttpRequest &req){
     if(req.method_ == "GET"){
       int fd_;
-      if((fd_ = ::open(req.path_.c_str(), O_RDONLY)) == -1){
+      std::string path = "." + req.path_;
+      if((fd_ = ::open(path.c_str(), O_RDONLY)) == -1){
          //to do
          Log(LogLevel::INFO, "open failed");
          return HttpResponse();

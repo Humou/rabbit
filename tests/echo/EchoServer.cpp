@@ -2,6 +2,7 @@
 #include"Acceptor.h"
 #include"Socket.h"
 #include"iostream"
+#include"EchoHandler.h"
 EchoServer::EchoServer(const IPAddress &listenAddr)
     :loop_(std::make_shared<EventLoop>())
 {
@@ -9,9 +10,8 @@ EchoServer::EchoServer(const IPAddress &listenAddr)
     if(listenfd_ == -1){
         return;
     }
-    acceptor_ = std::make_shared<Acceptor>(listenfd_, EPOLLIN, loop_);
+    acceptor_ = std::make_shared<Acceptor<EchoHandler>>(listenfd_, EPOLLIN, loop_);
     acceptor_->registerToLoop();
-
 } 
 
 void EchoServer::run(){
