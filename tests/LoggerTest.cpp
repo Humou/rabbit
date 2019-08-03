@@ -1,5 +1,4 @@
 #include"LoggerTest.h"
-#include"Logger.h"
 void LoggerTest(){
 
     Log(LogLevel::DEBUG, "first log");

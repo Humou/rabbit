@@ -3,6 +3,8 @@
 
 #include <unistd.h>
 #include<iostream>
+#include <sys/socket.h>
+
 EventHandler::EventHandler(int fd, uint32_t events, std::shared_ptr<EventLoop> &loop)
     :fd_(fd), events_(events), loop_(loop)
 {
@@ -41,7 +43,7 @@ void EventHandler::handleRead(){
 }
 
 void EventHandler::handleWrite(){
-
+    
 }
 void EventHandler::handleClose(){
 
@@ -52,4 +54,9 @@ void EventHandler::handleError(){
 
 void EventHandler::registerToLoop(){
     loop_->addEventHandler(shared_from_this());
+}
+
+void EventHandler::shutWrite(){
+    loop_->removeEventHandler(shared_from_this());
+    shutdown(fd_, SHUT_WR);
 }

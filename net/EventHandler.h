@@ -22,6 +22,8 @@ public:
     int events(){return events_;}
     void set_revents(int revents){revents_= revents;}
 
+    void shutWrite();
+
 protected:
     int fd_;
     std::shared_ptr<EventLoop> loop_;

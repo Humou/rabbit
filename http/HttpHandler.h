@@ -1,6 +1,14 @@
 #include"HttpRequest.h"
 #include"../net/Buffer.h"
 #include"../net/EventHandler.h"
+
+enum class ParseState{
+    RequestLine,
+    RequestHeaders,
+    ReuqestBody,
+    GotAll,
+};
+
 class HttpResponse;
 class HttpHandler : public EventHandler{
 public:
@@ -8,8 +16,15 @@ public:
 
     void handleRead() override;
     void handleWrite() override;
-    HttpResponse handleRequest(const HttpRequest &req);
+    HttpResponse handleRequest();
+
+    bool processRequestLine(const char* begin, const char* end);
+    bool parseRequest(Buffer* buf);
+    std::string contents();
 private:
     Buffer inputBuffer_;
     Buffer outPutBuffer_;
+
+    HttpRequest request_;
+    ParseState parseState_;
 };
