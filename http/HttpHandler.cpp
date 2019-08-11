@@ -18,32 +18,31 @@ HttpHandler::HttpHandler(int fd, std::shared_ptr<EventLoop> &loop)
 
 void HttpHandler::handleRead(){
    int rd = inputBuffer_.readFd(fd_, nullptr);
+
+   //eof
    if(rd == 0){
       ::close(fd_);
       return;
    }
-
    if(!parseRequest(&inputBuffer_)){
       outPutBuffer_.append("HTTP/1.1 400 Bad Request/r/n/r/n");
       shutWrite();
    }
-
    if(parseState_ == ParseState::GotAll){
       auto response = handleRequest();
       outPutBuffer_.append(response.message());
       const std::string& connection = request_.getHeader("Connection");
-
       if(connection == "Keep-Alive"){
          parseState_ = ParseState::RequestLine;
       }
       else{
-         shutWrite();
+         if(outPutBuffer_.readableBytes() == 0) shutWrite();
       }
    }
 }
 
 void HttpHandler::handleWrite(){
-   outPutBuffer_.writeFd(fd_, nullptr);
+   if(outPutBuffer_.readableBytes() > 0) outPutBuffer_.writeFd(fd_, nullptr);
  }
 
  bool HttpHandler::processRequestLine(const char* begin, const char* end){
@@ -151,7 +150,7 @@ void HttpHandler::handleWrite(){
 
 std::string HttpHandler::contents(){
    int fd;
-   std::string path = "." + request_.path();
+   std::string path = "/home/hu/rabbit/res/" + request_.path();
    if((fd = ::open(path.c_str(), O_RDONLY)) == -1){
       //to do
       Log(LogLevel::INFO, "open failed");

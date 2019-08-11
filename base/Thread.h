@@ -10,7 +10,7 @@ class TcpConnection;
 class Thread{
 public:
     Thread(std::function<void()> &thrFunc);
-
+    
 private:
     std::thread thread_;
 };

@@ -2,15 +2,19 @@
 
 void CountDownLatch::wait(){
     MutexGuard lock(mutex_);
-    while(count_ > 0)
-        con_.wait();
+    while(count_ > 0){
+         con_.wait();
+    }
+       
 }
 
 void CountDownLatch::countDown(){
     MutexGuard lock(mutex_);
-    count_--;
-    if(count_ == 0)
-        con_.notifyAll();
+    --count_;
+    if(count_ == 0){
+         con_.notifyAll();
+    }
+       
 }
 
 int CountDownLatch::getCount() const{

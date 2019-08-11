@@ -73,10 +73,10 @@ void Logger::log(LogLevel level, const char *file, int line, const char *func, c
     fmt = localtime(&now);
     int year = fmt->tm_year + 1900, month = fmt->tm_mon + 1, day = fmt->tm_mday;
     int hour = fmt->tm_hour, min = fmt->tm_min, sec = fmt->tm_sec;
-    out<<logLevelStr_[level]<<" ";
+    out<<logLevelStr_[level]<<":";
     out<<message<<" ";
-    out<<year<<month<<day<<" "<<hour<<":"<<min<<":"<<sec<<" ";
-    out<<file<<":"<<line<<" "<<func<<"\n";   
+    out<<" "<<file<<"_"<<line<<" "<<func<<" ";
+    out<<year<<month<<day<<" "<<hour<<":"<<min<<":"<<sec<<"\n";   
     std::string logStr = out.str();
 
     mayRotate();
@@ -105,10 +105,10 @@ void Logger::mayRotate(){
     std::stringstream out;
     int year = fmt->tm_year + 1900, month = fmt->tm_mon + 1, day = fmt->tm_mday;
     int hour = fmt->tm_hour, min = fmt->tm_min, sec = fmt->tm_sec;
-    out<<year<<month<<day<<" "<<hour<<":"<<min<<":"<<sec<<" ";
+    out<<year<<month<<day<<"_"<<hour<<":"<<min<<":"<<sec;
 
-    filename_ = "rabbit_" + out.str();
-    int fd = open(filename_.c_str(), O_APPEND|O_CREAT|O_WRONLY|O_CLOEXEC, S_IRUSR|S_IWUSR| S_IRGRP| S_IROTH);
+    filename_ = "log_" + out.str();
+    int fd = open(filename_.c_str(), O_APPEND|O_CREAT|O_WRONLY|O_CLOEXEC, S_IRUSR|S_IWUSR| S_IRGRP| S_IWGRP | S_IROTH | S_IWOTH);
     if(fd == -1){
         perror("Logger::mayOpenFile(): open file failed");
         return;

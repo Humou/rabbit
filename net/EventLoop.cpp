@@ -26,7 +26,8 @@ void EventLoop::loop(){
 
 
 std::vector<std::shared_ptr<EventHandler>> EventLoop::poll(){
-   std::vector<epoll_event> events(handlers_.size());
+    if(handlers_.size() == 0) return std::vector<std::shared_ptr<EventHandler>>();
+    std::vector<epoll_event> events(handlers_.size());
     int numEvents = epoll_wait(epoll_fd_, events.data(), events.size(), -1);
     if(numEvents == -1){
         perror("EventLoop::poll()");

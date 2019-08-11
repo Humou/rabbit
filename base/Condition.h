@@ -29,7 +29,7 @@ public:
     }
 
 private:
- Mutex mutex_;
+    Mutex& mutex_;
     pthread_cond_t con_;
 };
 #endif
